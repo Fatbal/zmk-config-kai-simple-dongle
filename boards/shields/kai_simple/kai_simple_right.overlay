@@ -6,5 +6,7 @@
 
 #include "kai_simple.dtsi"
 
-
+&default_transform {
+    col-offset = <17>;
+};
 
