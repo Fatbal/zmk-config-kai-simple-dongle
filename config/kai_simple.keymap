@@ -8,20 +8,12 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
-    //  flavor = "tap-preferred";
-    // tapping_term_ms = <200>;
-
-    flavor = "balanced";
-    tapping-term-ms = <170>;
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
 };
 
-&sk {
-    quick-release;
 
-    // ignore-modifiers;
-};
 
-&sl { release-after-ms = <1500>; };
 
 / { 
 
@@ -99,38 +91,7 @@
 
 
 
-    behaviors {
-        holdtap_comma: holdtap_comma {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_COMMA";
-            bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <29>;
-            flavor = "hold-preferred";
-        };
-
-        holdtap_period: holdtap_period {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_PERIOD";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <30>;
-        };
-
-        holdtap_equal_enter: holdtap_equal_enter {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTAP_EQUAL_ENTER";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <21>;
-        };
-    };
 
      keymap {
                 compatible = "zmk,keymap";
@@ -175,6 +136,12 @@
 								&studio_unlock &kp N1  	     &kp N1 &studio_unlock 
 		>;
 		};	
-        
+        extra1 {
+            status = "reserved";
+        };
+
+        extra2 {
+            status = "reserved";
+        };
 	};
 };
