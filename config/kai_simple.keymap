@@ -23,102 +23,81 @@
 
 &sl { release-after-ms = <1500>; };
 
-/ {
+/ { 
+
     combos {
         compatible = "zmk,combos";
-
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <1 0>;
+            key-positions = <0 1>;
             bindings = <&kp ESC>;
         };
-
-        combo_tab {
+        
+         combo_tab {
             timeout-ms = <50>;
-            key-positions = <21 22>;
+            key-positions = <13 11>;
             bindings = <&kp TAB>;
         };
-
-        combo_return {
+        
+         combo_ralt {
             timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp RETURN>;
+            key-positions = <18 17>;
+            bindings = <&kp RALT>;
         };
-
-        combo_manager {
+        
+          combo_lalt {
             timeout-ms = <50>;
-            key-positions = <0 2>;
-            bindings = <&kp LS(LC(ESCAPE))>;
-        };
-
-        combo_highlight {
-            timeout-ms = <50>;
-            key-positions = <16 19>;
-            bindings = <&highlight_macro>;
-        };
-
-        combo_toggle1 {
-            bindings = <&tog 1>;
-            key-positions = <30 31>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_toggle3 {
-            bindings = <&tog 3>;
-            key-positions = <32 33>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_backspace_1 {
-            bindings = <&kp BACKSPACE>;
             key-positions = <11 12>;
-            timeout-ms = <30>;
-            layers = <0 1 2 3>;
+            bindings = <&kp LALT>;
+        };
+        
+         combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <4 3>;
+            bindings = <&kp LGUI>;
+        };
+              
+         combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp RGUI>;
+        };
+        
+	 combo_rctrl {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp RCTRL>;
+        };
+	
+	 combo_lctrl {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp LCTRL>;
+        };
+	
+	combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp BSPC>;
+        };
+	
+	combo_del {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp DEL>;
+        };
+	
+	
+	combo_layer3 {
+            timeout-ms = <250>;
+            key-positions = <0 9 20 29>;
+            bindings = <&tog 3>;
         };
 
-        combo_delete_2 {
-            bindings = <&kp DELETE>;
-            key-positions = <12 13>;
-            timeout-ms = <30>;
-            layers = <0 1 2 3>;
-        };
-
-        combo_backspace_2 {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <16 17>;
-            layers = <0 1 2 3>;
-            timeout-ms = <30>;
-        };
-
-        combo_delete_1 {
-            bindings = <&kp DELETE>;
-            key-positions = <17 18>;
-            layers = <0 1 2 3>;
-            timeout-ms = <30>;
-        };
-
-        combo_copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <22 23>;
-            layers = <0 1 2 3>;
-        };
+        
     };
 
-    macros {
-        cnq_macro: cnq_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp LBKT &kp GRAVE &kp RIGHT_BRACKET &kp LEFT_ARROW &kp LEFT_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
-            label = "CNQ_MACRO";
-        };
 
-        highlight_macro: highlight_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HOME &kp LS(END)>;
-            label = "HIGHLIGHT_MACRO";
-        };
-    };
 
     behaviors {
         holdtap_comma: holdtap_comma {
